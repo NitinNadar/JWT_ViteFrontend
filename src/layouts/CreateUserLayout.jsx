@@ -1,10 +1,6 @@
-import { useState } from 'react';
 import '../css/CreateUserLayout.css';
-import Stepper from '../components/stepper/Stepper';
 
 const CreateUserLayout = (props) => {
-
-  const [number, setNumber] = useState(0);
 
   return (
     <main className='create-user-layout select-text-disable'>
@@ -18,11 +14,29 @@ const CreateUserLayout = (props) => {
           : (<></>)}
         </nav>
         <section className='create-user-layout-body'>
-          <button onClick={() => setNumber((old) => old > 0 ? old - 1 : 0)}>back</button>
-          <button onClick={() => setNumber((old) => old + 1)}>Next</button>
+          <main className='creation-screen'>
+            <article className='creation-screen-action'>
+              <button onClick={() => props?.CreateUserFooter?.CreateUserStepperFunction((old) => old > 0 ? old - 1 : 0)}>back</button>
+              <button onClick={() => props?.CreateUserFooter?.CreateUserStepperFunction((old) => old + 1)}>Next</button>
+            </article>
+            <article className='creation-screen-info'>
+              <img className='creation-screen-info-img' alt='screen-info' src={
+                  new URL(
+                    `../assets/appGraphic/UserInfo.jpg`,
+                    import.meta.url
+                  ).href
+                } />
+            </article>
+          </main>
         </section>
         <footer className='create-user-layout-footer'>
-          <Stepper totalScreen={4} stepNumber={number} />
+          {props?.CreateUserType === "CreateSystemUser" 
+          ? (
+              <>
+                <props.CreateUserFooter.CreateUserStepper totalScreen={props?.CreateUserFooter?.CreateUserStepperInfo?.length} stepperInfo={props?.CreateUserFooter?.CreateUserStepperInfo} stepNumber={props?.CreateUserFooter?.CreateUserStepperState} />
+              </>
+            ) 
+          : (<></>)}
         </footer>
     </main>
   )

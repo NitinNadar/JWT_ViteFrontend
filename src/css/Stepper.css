@@ -7,7 +7,6 @@
 .stepper-container-check {
     width: 40px;
     height: 40px;
-    border: 2px solid black;
     border-radius: 50%;
     font-size: 18px;
     color: black;
@@ -24,13 +23,14 @@
 }
 
 .stepper-container-true {
-    height: 10px;
+    height: 6px;
+    border-radius: 50px;
     background: linear-gradient(360deg, #8f3dec, #8515c5);
     animation: fillBar 0.8s ease-in-out forwards;
 }
 
-.stepper-container-check-true {
-  background-color: rgb(111, 248, 111);
+.stepper-icon {
+  width: 42px;
 }
 
 @keyframes fillBar {

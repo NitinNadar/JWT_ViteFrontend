@@ -1,15 +1,19 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import CreateUserLayout from '../../layouts/CreateUserLayout'
 import { useNavigate } from 'react-router-dom';
 import StackViewerNavTab from '../../components/stackViewerNavTab/StackViewerNavTab';
+import Stepper from '../../components/stepper/Stepper';
 
 const CreateUser = () => {
 
     const navigate = useNavigate();
 
-    const createUserPageReload = useCallback( async() => {
-        await window.location.reload();
-    }, []);
+    const [stepNumber, setStepNumber] = useState(0);
+    let stepperInfo = ['User','Connect','Service','Fingerprint'];
+
+    const createUserPageReload = useCallback(() => {
+        setStepNumber(0);
+    });
 
   return (
     <>
@@ -33,11 +37,10 @@ const CreateUser = () => {
             }
             CreateUserFooter={
                 {
-                    CreateUserPagination: "",
-                    CreateUserPaginationLoader: "",
-                    CreateUserPaginationPage: "",
-                    CreateUserPaginationType: "",
-                    CreateUserPaginationFunction: ""
+                    CreateUserStepper: Stepper,
+                    CreateUserStepperInfo: stepperInfo,
+                    CreateUserStepperState: stepNumber,
+                    CreateUserStepperFunction: setStepNumber,
                 }
             }
         />

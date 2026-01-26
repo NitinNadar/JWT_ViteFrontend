@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/Stepper.css';
 
-const Stepper = ({ totalScreen, stepNumber }) => {
+const Stepper = ({ totalScreen, stepperInfo, stepNumber }) => {
   const totalPage = Array.from({ length: totalScreen }, (_, i) => i + 1);
 
   return (
@@ -9,7 +9,12 @@ const Stepper = ({ totalScreen, stepNumber }) => {
       {totalPage.map((number) => (
         <React.Fragment key={number}>
           <div className={`stepper-container-check ${stepNumber >= number ? "stepper-container-check-true" : ""}`}>
-            {number}
+            <img className='stepper-icon' alt='stepper icon' src={
+                  new URL(
+                    `../../assets/InformationIcon/${stepperInfo[number - 1]}.png`,
+                    import.meta.url
+                  ).href
+                } />
           </div>
 
           {number !== totalScreen && (

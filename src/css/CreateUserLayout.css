@@ -21,6 +21,8 @@
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
     padding: 0 15px 15px 15px;
     margin: 5px 0 105px 0;
 }
@@ -35,4 +37,26 @@
     justify-content: center;
     align-items: center;
     background-color: white;
+}
+
+
+.creation-screen {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.creation-screen-action {
+    width: 50%;
+}
+
+.creation-screen-info {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.creation-screen-info-img {
+    width: 60%;
 }
