@@ -22,11 +22,11 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding: 0 15px 15px 15px;
-    margin: 5px 0 45px 0;
+    margin: 5px 0 105px 0;
 }
 
 .create-user-layout-footer {
-    height: 40px;
+    height: 100px;
     position: fixed;
     bottom: 0;
     width: 100%;

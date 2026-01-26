@@ -1,0 +1,41 @@
+.stepper-container {
+    width: 650px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stepper-container-space {
+    width: 150px;
+    height: 10px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.stepper-container-one, .stepper-container-two, .stepper-container-three, .stepper-container-four {
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 18px;
+    color: black;
+    display: flex;
+    align-items: inherit;
+    justify-content: center;
+}
+
+.stepper-container-true {
+    width: 150px;
+    height: 10px;
+    background: linear-gradient(360deg, #8f3dec, #8515c5);
+    animation: fillBar 2s ease-in-out forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -4,13 +4,12 @@ import { getAllUserDetailsReset } from '../../services/UserInfo/getAllUserDetail
 import StackViewerLayout from '../../layouts/StackViewerLayout';
 import Searchbar from '../../elements/Searchbar';
 import StackViewerCard, { StackViewerCardLoader } from '../../components/stackViewerCard/StackViewerCard';
-import AppPagination from '../../components/appPagination/AppPagination';
+import AppPagination, { AppPaginationLoader } from '../../components/appPagination/AppPagination';
 import { useNavigate } from 'react-router-dom';
 import StackViewerNavTab from '../../components/stackViewerNavTab/StackViewerNavTab';
 import { handleAppuserList } from '../../utils/handleAppUserList';
 import { handleUserProfile } from '../../utils/handleUserProfile';
 import { navigateBackGlobalStateReset } from '../../services/NavigateBack/navigateBack';
-import AppPaginationLoader from '../../components/appPagination/AppPaginationLoader';
 import DataNotFound from '../../components/dataNotFound/DataNotFound';
 
 const ListOfUser = () => {

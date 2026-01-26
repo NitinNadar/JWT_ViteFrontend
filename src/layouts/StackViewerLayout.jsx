@@ -67,7 +67,7 @@ const StackViewerLayout = (props) => {
                             {zoneLabel: "Log In: ", zoneValue: data?.latestLogedIn&&data?.latestLogedIn !== "" ? formatDateTime({type: "DateAndTime", value: data?.latestLogedIn}) : "-- / -- / -- , 00:00:00"},
                             {zoneLabel: "Log Out: ", zoneValue: data?.latestLogedOut&&data?.latestLogedOut !== "" ? formatDateTime({type: "DateAndTime", value: data?.latestLogedOut}) : "-- / -- / -- , 00:00:00"}
                           ],
-                          status: {statusLabel: "Log In", statusValue: data?.logedIn},
+                          status: {statusLabel: "Status", statusValue: data?.logedIn},
                           action: {
                             actionLabel: "View Details", 
                             actionButton: () => props?.StackViewerBody?.StackViewerCardAction({userId: data?.userId, path: "/userprofile" })

@@ -12,8 +12,8 @@ import MessageBox from '../components/alert/MessageBox';
 import DialogBox from '../components/alert/DialogBox';
 import AppTabPanel from '../components/appTabPanel/AppTabPanel';
 import MobileTabPanel from '../components/mobileTabPanel/MobileTabPanel';
-import CreateUserLayout from '../layouts/CreateUserLayout';
 import InvoicePage from '../pages/InvoicePage';
+import CreateUser from '../container/CreateUser/CreateUser';
 
 
 const AppRouter = (props) => {
@@ -76,7 +76,7 @@ const AppRouter = (props) => {
           <Route path='/home' element={<><HomePage /></>}/>
           <Route path='/userlist' element={<><ListOfUser /></>}/>
           <Route path='/userprofile' element={<><UserProfile /></>}/>
-          <Route path='/createuser' element={<><CreateUserLayout /></>}/>
+          <Route path='/createuser' element={<><CreateUser /></>}/>
         </> 
         : 
         <>
