@@ -5,7 +5,7 @@ import Stepper from '../components/stepper/Stepper';
 const CreateUserLayout = (props) => {
 
   const [number, setNumber] = useState(0);
-console.log(number)
+
   return (
     <main className='create-user-layout select-text-disable'>
         <nav className='create-user-layout-navbar'>
@@ -22,7 +22,7 @@ console.log(number)
           <button onClick={() => setNumber((old) => old + 1)}>Next</button>
         </section>
         <footer className='create-user-layout-footer'>
-          <Stepper totalScreen={6} stepNumber={number} />
+          <Stepper totalScreen={4} stepNumber={number} />
         </footer>
     </main>
   )
