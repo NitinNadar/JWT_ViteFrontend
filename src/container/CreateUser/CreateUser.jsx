@@ -3,6 +3,7 @@ import CreateUserLayout from '../../layouts/CreateUserLayout'
 import { useNavigate } from 'react-router-dom';
 import StackViewerNavTab from '../../components/stackViewerNavTab/StackViewerNavTab';
 import Stepper from '../../components/stepper/Stepper';
+import UserCreation from '../../components/UserCreation/UserCreation';
 
 const CreateUser = () => {
 
@@ -10,6 +11,7 @@ const CreateUser = () => {
 
     const [stepNumber, setStepNumber] = useState(0);
     let stepperInfo = ['User','Connect','Service','Fingerprint'];
+    let creationPageImage = ['UserInfo','UserConnect','UserService','UserSecurity'];
 
     const createUserPageReload = useCallback(() => {
         setStepNumber(0);
@@ -29,8 +31,8 @@ const CreateUser = () => {
             }
             CreateUserBody={
                 {
-                    CreateUserCard: "",
-                    CreateUserCardLoader: "",
+                    CreateUserCard: UserCreation,
+                    CreateUserCardImageData: creationPageImage,
                     CreateUserCardAction: "",
                     CreateUserCardNoData: "",
                 }

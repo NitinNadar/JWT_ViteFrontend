@@ -14,20 +14,13 @@ const CreateUserLayout = (props) => {
           : (<></>)}
         </nav>
         <section className='create-user-layout-body'>
-          <main className='creation-screen'>
-            <article className='creation-screen-action'>
-              <button onClick={() => props?.CreateUserFooter?.CreateUserStepperFunction((old) => old > 0 ? old - 1 : 0)}>back</button>
-              <button onClick={() => props?.CreateUserFooter?.CreateUserStepperFunction((old) => old + 1)}>Next</button>
-            </article>
-            <article className='creation-screen-info'>
-              <img className='creation-screen-info-img' alt='screen-info' src={
-                  new URL(
-                    `../assets/appGraphic/UserInfo.jpg`,
-                    import.meta.url
-                  ).href
-                } />
-            </article>
-          </main>
+          {props?.CreateUserType === "CreateSystemUser" 
+          ? (
+              <>
+                <props.CreateUserBody.CreateUserCard operations={props?.CreateUserFooter?.CreateUserStepperFunction} imageInfo={props?.CreateUserBody?.CreateUserCardImageData} stepNumber={props?.CreateUserFooter?.CreateUserStepperState}/>
+              </>
+            ) 
+          : (<></>)}          
         </section>
         <footer className='create-user-layout-footer'>
           {props?.CreateUserType === "CreateSystemUser" 

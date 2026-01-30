@@ -38,25 +38,3 @@
     align-items: center;
     background-color: white;
 }
-
-
-.creation-screen {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-}
-
-.creation-screen-action {
-    width: 50%;
-}
-
-.creation-screen-info {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.creation-screen-info-img {
-    width: 60%;
-}
