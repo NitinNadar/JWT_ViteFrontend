@@ -4,7 +4,7 @@ import { InputField } from '../../elements/InputField';
 import { Button } from '@mui/material';
 
 const UserCreation = (props) => {
-    console.log(props?.imageInfo[props?.stepNumber])
+    
   return (
     <>
           <main className='creation-screen'>
@@ -50,7 +50,7 @@ const UserCreation = (props) => {
                 }
                 <div className='creation-screen-validate'>
                     <Button variant="outlined" startIcon={<KeyboardArrowLeft />} onClick={() => props?.operations((old) => old > 0 ? old - 1 : 0)}>Previous</Button>
-                    <Button variant="outlined" endIcon={<KeyboardArrowRight />} onClick={() => props?.operations((old) => old + 1)}>Next</Button>
+                    <Button variant="outlined" endIcon={<KeyboardArrowRight />} onClick={() => props?.operations((old) => old < props?.imageInfo?.length - 1 ? old + 1 : old)}>Next</Button>
                 </div>
             </article>
             <article className='creation-screen-info'>

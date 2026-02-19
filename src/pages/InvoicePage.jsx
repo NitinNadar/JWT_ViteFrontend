@@ -80,7 +80,19 @@ const InvoicePage = () => {
             })
         })
     }
-console.log(itemDetails)
+
+    const handleUpdate = (section, field, value) => {
+        if(section === "MakerDetails"){
+            setMakerDetails((prev) => {
+                if(prev?.label === field){
+                    return {...prev, "value": value};
+                } else {
+                    return prev;
+                }
+            })
+        }
+    }
+
     const directBack = () => {
         navigate(-1);
     };

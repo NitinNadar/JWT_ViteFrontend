@@ -14,6 +14,7 @@ import AppTabPanel from '../components/appTabPanel/AppTabPanel';
 import MobileTabPanel from '../components/mobileTabPanel/MobileTabPanel';
 import InvoicePage from '../pages/InvoicePage';
 import CreateUser from '../container/CreateUser/CreateUser';
+import FormStructure from '../From/From';
 
 
 const AppRouter = (props) => {
@@ -69,6 +70,7 @@ const AppRouter = (props) => {
         <Route path='/' element={<LoginPage />}/>
         <Route path='/signup' element={<SignupPage />}/>
         <Route path='/developer' element={<><Developer /></>}/>
+        <Route path='/form' element={<><FormStructure /></>}/>
         <Route path='/invoice' element={<><InvoicePage /></>}/>
         {getUserStatus?.status || userLoginData?.status 
         ? 
