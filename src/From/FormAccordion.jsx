@@ -36,13 +36,13 @@ const FormAccordion = () => {
     <>
         <Accordion sx={{backgroundColor: 'white', border: '2px solid #e0e0e0', boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.5)', padding: '1vh' }}>
             <AccordionSummary expandIcon={<ExpandMore />}>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'left' }}>New Form Structure Main</Typography>
+            <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'left' }}>New Form Structure Main</Typography>
             </AccordionSummary>
             <AccordionDetails>
             <form style={{paddingLeft: '', paddingTop: '2vh'}}>
                 <div style={{ display: 'flex', paddingTop: '3vh'}}>
                     <div style={{flex: '30%'}}>
-                            <Typography variant="h5" sx={{ fontWeight: '', textAlign: 'right' }}>Text:<span style={{color: 'red'}}></span></Typography>
+                            <Typography variant="h5" sx={{ fontWeight: '', textAlign: 'right', display: 'block' }}>Text:<span style={{color: 'red'}}></span></Typography>
                     </div>
                     <div style={{ flex: '70%'}}>
                             <TextField sx={{ paddingLeft: '2vw', width: '20vw'}} type='text' multiline={false} rows={4} fullWidth inputProps={{maxLength: 36}} value={text} onChange={(event) => {handleText(event)}}/>
