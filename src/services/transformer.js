@@ -12,6 +12,7 @@ import appLoaderGlobalState from "./AppLoader/appLoader";
 import appTabPanelGlobalState from "./AppTabPanel/appTabPanel";
 import appMenuReducer from "./AppMenu/appMenu";
 import mobileTabPanelGlobalState from "./MobileTabPanel/mobileTabPanel";
+import paperFormReducer from "./PaperForm/paperForm";
 
 export const transformer = combineReducers({
     userLoginReducer: userLoginReducer,
@@ -27,6 +28,7 @@ export const transformer = combineReducers({
     appTabPanelGlobalState: appTabPanelGlobalState,
     appMenuReducer: appMenuReducer,
     mobileTabPanelGlobalState: mobileTabPanelGlobalState,
+    paperFormReducer: paperFormReducer,
 });
 
 export default transformer;

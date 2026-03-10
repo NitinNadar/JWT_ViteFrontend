@@ -1,4 +1,6 @@
-import { Box, Button, Dialog, DialogContent, DialogTitle, Typography } from "@mui/material"
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Dialog, DialogContent, DialogTitle, Typography } from "@mui/material"
+import FormAccordion from "../From/FormAccordion"
+import { ExpandMore } from "@mui/icons-material"
 
 const Paper = (props) => {
   return (
@@ -9,7 +11,7 @@ const Paper = (props) => {
         >
             <DialogTitle 
                 sx={{
-                    backgroundColor: '#3b5998', 
+                    backgroundColor: props?.paperDetails?.paper_header?.paper_header_bg_color, 
                     display: 'flex', 
                     justifyContent:'space-between', 
                     alignItems: 'center'
@@ -17,17 +19,17 @@ const Paper = (props) => {
             >
                 <Typography 
                     sx={{ 
-                        fontSize: '22px', 
-                        fontWeight: '600', 
-                        color: '#f7f7f7',
+                        fontSize: props?.paperDetails?.paper_header?.paper_title_fontsize, 
+                        fontWeight: props?.paperDetails?.paper_header?.paper_title_fontweight, 
+                        color: props?.paperDetails?.paper_header?.paper_title_color,
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
-                        width: '85%',
-                        maxWidth: '85%'
+                        width: props?.paperDetails?.paper_header?.paper_title_width,
+                        maxWidth: props?.paperDetails?.paper_header?.paper_title_width
                     }}
                 >
-                    Bank of America Audit Form
+                    {props?.paperDetails?.paper_header?.paper_title}
                 </Typography>
                 <Box 
                     sx={{
@@ -40,16 +42,16 @@ const Paper = (props) => {
                     >
                         <Button 
                             sx={{
-                                backgroundColor: '#ffffff', 
+                                backgroundColor: props?.paperDetails?.paper_header?.paper_button_bg_color, 
                                 textTransform: 'none'
                                 }} 
-                            onClick={() => {}}
+                            onClick={() => props?.handleSave()}
                         >
                             <Typography
                                 sx={{ 
-                                    fontSize: '16px', 
-                                    fontWeight: '500', 
-                                    color: '#3b5998',
+                                    fontSize: props?.paperDetails?.paper_header?.paper_button_fontsize, 
+                                    fontWeight: props?.paperDetails?.paper_header?.paper_button_fontweight, 
+                                    color: props?.paperDetails?.paper_header?.paper_button_color,
                                 }}
                             >
                                 Save
@@ -57,16 +59,16 @@ const Paper = (props) => {
                         </Button>
                         <Button 
                             sx={{
-                                backgroundColor: '#ffffff', 
+                                backgroundColor: props?.paperDetails?.paper_header?.paper_button_bg_color, 
                                 textTransform: 'none'
                                 }} 
-                            onClick={props?.handleClose}
+                            onClick={() => props?.handleClose()}
                         >
                             <Typography
                                 sx={{ 
-                                    fontSize: '16px', 
-                                    fontWeight: '500', 
-                                    color: '#3b5998',
+                                    fontSize: props?.paperDetails?.paper_header?.paper_button_fontsize, 
+                                    fontWeight: props?.paperDetails?.paper_header?.paper_button_fontweight, 
+                                    color: props?.paperDetails?.paper_header?.paper_button_color,
                                 }}
                             >
                                 Close
@@ -75,7 +77,14 @@ const Paper = (props) => {
                 </Box>
             </DialogTitle>
             <DialogContent>
+            <Accordion sx={{backgroundColor: 'white', border: '2px solid #e0e0e0', boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.5)'}}>
+                <AccordionSummary expandIcon={<ExpandMore />}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'left' }}>New Form Structure Main</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
 
+                </AccordionDetails>
+            </Accordion>
             </DialogContent>
         </Dialog>
     </>
